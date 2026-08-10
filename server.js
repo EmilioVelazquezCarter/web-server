@@ -43,10 +43,4 @@ app.listen(PORT, () => {
 // step one
 // step two
 // step three
-// checkpoint 1
-// checkpoint 2
-// checkpoint 3
-// BUG: off-by-one introduced here
-// checkpoint 4
-// checkpoint 5
-// stable checkpoint
+// hotfix: correct the startup log message
