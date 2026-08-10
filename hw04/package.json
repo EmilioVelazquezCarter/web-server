@@ -1,0 +1,26 @@
+{
+  "name": "hw04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "seed": "node seed.js",
+    "start": "node server.js",
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "jest": "^30.4.2",
+    "tailwindcss": "^4.3.3"
+  }
+}

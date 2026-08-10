@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Harvard Forest Phenology Tracker</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body class="bg-slate-50 min-h-screen p-6 text-slate-900">
+  <div class="mx-auto max-w-3xl">
+    <h1 class="text-2xl font-bold mb-1">Harvard Forest Phenology Tracker</h1>
+    <p class="text-sm text-slate-500 mb-6">Petersham, MA — HF003 long-term phenology study</p>
+
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold mb-2">Trees</h2>
+      <ul class="flex flex-wrap gap-2">
+        <% trees.forEach(function(tree) { %>
+          <li class="rounded-full bg-slate-200 px-3 py-1 text-xs font-mono" title="<%= tree.species %> — <%= tree.site || 'site unrecorded' %>">
+            <%= tree.treeId %>
+          </li>
+        <% }); %>
+      </ul>
+    </section>
+
+    <section class="mb-8 rounded-lg border border-slate-200 bg-white p-4">
+      <h2 class="text-lg font-semibold mb-3">Log an observation</h2>
+      <form id="observation-form" class="flex flex-wrap gap-3 items-end">
+        <div>
+          <label class="block text-xs font-medium text-slate-600" for="treeId">Tree</label>
+          <select id="treeId" name="treeId" class="rounded border border-slate-300 px-2 py-1 text-sm">
+            <% trees.forEach(function(tree) { %>
+              <option value="<%= tree.treeId %>"><%= tree.treeId %></option>
+            <% }); %>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-600" for="phenophase">Phenophase</label>
+          <select id="phenophase" name="phenophase" class="rounded border border-slate-300 px-2 py-1 text-sm">
+            <option>bud break</option>
+            <option>leaf development</option>
+            <option>flowering</option>
+            <option>leaf color change</option>
+            <option>leaf fall</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-600" for="date">Date</label>
+          <input id="date" name="date" type="date" class="rounded border border-slate-300 px-2 py-1 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-600" for="percent">Percent (optional)</label>
+          <input id="percent" name="percent" type="number" min="0" max="100" class="w-20 rounded border border-slate-300 px-2 py-1 text-sm" />
+        </div>
+        <button type="submit" class="rounded bg-slate-800 px-3 py-1.5 text-sm font-semibold text-white hover:bg-slate-900">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold mb-2">Observations</h2>
+      <ul id="observation-list" class="rounded-lg border border-slate-200 bg-white">
+        <% observations.forEach(function(observation) { %>
+          <%- include('partials/observation-row', { observation }) %>
+        <% }); %>
+      </ul>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

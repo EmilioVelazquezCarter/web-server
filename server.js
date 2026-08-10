@@ -13,6 +13,8 @@ app.get('/hello/:name', (req, res) => {
   res.send(`Hello, ${req.params.name}!`);
 });
 
+
+
 app.get('/repeat/:word', (req, res) => {
   const word = req.params.word;
   res.send(`${word} ${word} ${word}`);
@@ -43,10 +45,5 @@ app.listen(PORT, () => {
 // step one
 // step two
 // step three
-// checkpoint 1
-// checkpoint 2
-// checkpoint 3
-// BUG: off-by-one introduced here
-// checkpoint 4
-// checkpoint 5
-// stable checkpoint
+// hotfix: correct the startup log message
+// wip: new feature, not ready yet
