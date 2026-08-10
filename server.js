@@ -13,8 +13,6 @@ app.get('/hello/:name', (req, res) => {
   res.send(`Hello, ${req.params.name}!`);
 });
 
-
-
 app.get('/repeat/:word', (req, res) => {
   const word = req.params.word;
   res.send(`${word} ${word} ${word}`);
