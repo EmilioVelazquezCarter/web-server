@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #f4f6ff;
+  color: #1f2937;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.city-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.city-card {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 200px;
+}
+
+.city-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.reading-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d5de;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reading-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.reading-form input {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.reading-form button {
+  padding: 0.5rem 1.25rem;
+  background-color: #1d4ee1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.reading-item {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-good { color: #15803e; }
+.category-moderate { color: #ca8a01; }
+.category-unhealthy-for-sensitive-groups { color: #ea588c; }
+.category-unhealthy { color: #dc2621; }
+.category-very-unhealthy { color: #9333ea; }
+.category-hazardous { color: #7f1d1f; font-weight: bold; }

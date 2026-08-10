@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emilio's Air Quality Watch</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Air Quality Watch (from wild fires)</h1>
+
+    <div class="city-grid">
+      <% cities.forEach((city) => { %>
+        <div class="city-card">
+          <h3><%= city.name %></h3>
+          <p><%= city.state %></p>
+        </div>
+      <% }) %>
+    </div>
+
+    <form id="reading-form" class="reading-form">
+      <label>
+        City ID
+        <input type="number" name="cityId" required />
+      </label>
+
+      <label>
+        AQI
+        <input type="number" name="aqi" required />
+      </label>
+
+      <button type="submit">Log Reading</button>
+    </form>
+
+    <p id="message"></p>
+    <div id="readings"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
